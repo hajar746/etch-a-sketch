@@ -7,15 +7,10 @@
 .container {
   display: flex;
   height: 100vh;
-}
-
-.controls,
-.main {
-  border: 1.5px solid black;
+  justify-content: space-between;
 }
 
 .main {
-  flex-grow: 2;
   text-align: center;
 }
 
@@ -24,11 +19,11 @@
 }
 
 .controls {
-  flex-grow: 1;
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .controls > * {
@@ -38,6 +33,54 @@
 .sketch-pad {
   width: 960px;
   height: auto;
-  margin: 1rem 2rem;
+  margin: 1rem;
   border: 1px solid black;
+}
+
+/* BOARD SIZE SLIDER */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  margin-top: 1rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #386a8e;
+  height: 0.5rem;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -4.5px; /* Centers thumb on the track */
+  background-color: #9bbbd1;
+  height: 1rem;
+  width: 0.7rem;
+}
+
+/* COLOR PICKER */
+.color-picker {
+  margin: 1rem;
+  border: none;
+  width: 4rem;
+  height: 3rem;
+}
+
+.btn-rainbow {
+  border-radius: 8px;
+  border: none;
+  background-image: linear-gradient(
+    90deg,
+    #f38ba0,
+    #f6ae99,
+    #f1ca89,
+    #d5ecc2,
+    #bdd2b6,
+    #87a7b3,
+    #e4bad4
+  );
+  cursor: pointer;
+  font-size: 1.3rem;
 }

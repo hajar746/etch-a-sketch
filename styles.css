@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.controls,
+.main {
+  border: 1.5px solid black;
+}
+
+.main {
+  flex-grow: 2;
+  text-align: center;
+}
+
+.main h1 {
+  padding: 2rem;
+}
+
+.controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.controls > * {
+  padding: 1.5rem;
+}
+
+.sketch-pad {
+  width: 960px;
+  height: auto;
+  margin: 1rem 2rem;
+  border: 1px solid black;
+}

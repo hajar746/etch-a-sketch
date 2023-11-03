@@ -5,24 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <section class="controls">
+        <h1>Pick a board size and ink color</h1>
         <div class="controls-size">
-          <h3>Board size</h3>
+          <h3>Board size:</h3>
           <input
             class="range"
             type="range"
-            value="0"
+            min="1"
+            value=""
             max="100"
             oninput="num.value = this.value"
           />
-          <output id="num">0</output>
+          <input type="text" id="num" placeholder="16" />
+          <button class="btn-change">change</button>
         </div>
         <div class="color">
-          <h3>Pick a color</h3>
-          <input type="color" value="#0000" class="color-picker" />
+          <h3>Pick a color:</h3>
+          <input type="color" value="#000000" class="color-picker" />
         </div>
         <button class="btn-rainbow">RAINBOW</button>
       </section>
@@ -31,5 +42,6 @@
         <div class="sketch-pad"></div>
       </section>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

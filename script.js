@@ -34,7 +34,7 @@ btnChange.addEventListener("click", () => makeGrid(size));
 // changing color of divs when hovered over
 const colorPicker = document.querySelector(".color-picker");
 
-sketchPad.addEventListener("click", function (e) {
+sketchPad.addEventListener("mousedown", function (e) {
   const target = e.target.closest(".divs");
   if (target) {
     target.style.backgroundColor = colorPicker.value;
@@ -48,19 +48,21 @@ sketchPad.addEventListener("click", function (e) {
 });
 
 // RAINBOW button
-const btnRainbow = document.querySelector(".btn-rainbow");
-function randomColorFunc() {
-  return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
-    Math.random() * 255
-  )}, 
-    ${Math.floor(Math.random() * 255)})`;
-}
 
-btnRainbow.addEventListener("click", () => {
+const btnRainbow = document.querySelector(".btn-rainbow");
+// function to make ink color random
+function randomColorFunc() {
   let divs = document.querySelectorAll(".divs");
   for (let i = divs.length - 1; i >= 0; i--) {
+    let color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+      Math.random() * 255
+    )}, 
+    ${Math.floor(Math.random() * 255)})`;
     divs[i].addEventListener("mouseenter", () => {
-      divs[i].style.backgroundColor = randomColorFunc();
+      divs[i].style.backgroundColor = color;
     });
   }
-});
+}
+
+btnRainbow.addEventListener("click", randomColorFunc);
+const remove = () => btnRainbow.removeEventListener("click", randomColorFunc);

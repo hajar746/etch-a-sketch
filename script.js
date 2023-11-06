@@ -30,3 +30,19 @@ const btnChange = document.querySelector(".btn-change");
 btnChange.addEventListener("click", () => makeGrid(size));
 
 ///////////////////////////////////////////////////////////////////////////////
+
+// changing color of divs when hovered over
+const colorPicker = document.querySelector(".color-picker");
+
+sketchPad.addEventListener("click", function (e) {
+  const target = e.target.closest(".divs");
+  if (target) {
+    target.style.backgroundColor = colorPicker.value;
+    sketchPad.addEventListener("mouseover", function (e) {
+      const target = e.target.closest(".divs");
+      if (target) {
+        target.style.backgroundColor = colorPicker.value;
+      }
+    });
+  }
+});

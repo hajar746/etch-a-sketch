@@ -24,13 +24,13 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
-  width: 25%;
+  width: 33%;
   background-color: #073b4c;
   color: #f9f7f8;
 }
 
 .controls h1 {
-  padding: 0.8rem 1rem;
+  padding: 0.8rem;
   color: #ffd166;
   font-size: 2.5rem;
 }
@@ -84,8 +84,6 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .btn-rainbow {
-  border-radius: 8px;
-  border: none;
   background-image: linear-gradient(
     90deg,
     #f38ba0,
@@ -96,6 +94,12 @@ input[type="range"]::-webkit-slider-thumb {
     #87a7b3,
     #e4bad4
   );
+}
+
+.btn-rainbow,
+.btn-reset {
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
   font-size: 1.3rem;
   padding: 0.7rem;
@@ -120,4 +124,10 @@ input[type="range"]::-webkit-slider-thumb {
 .divs {
   border: 0.1px solid rgb(215, 209, 209);
   border-collapse: collapse;
+}
+
+/* RESET BTN */
+.btn-reset {
+  background-color: #a8102e;
+  font-weight: 700;
 }

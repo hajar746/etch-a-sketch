@@ -48,7 +48,6 @@ colorPicker.addEventListener("input", changeColor);
 sketchPad.addEventListener("mousedown", changeColor);
 
 // RAINBOW button
-
 const btnRainbow = document.querySelector(".btn-rainbow");
 // function to make ink color random
 function randomColorFunc() {
@@ -65,3 +64,7 @@ function randomColorFunc() {
 }
 
 btnRainbow.addEventListener("click", randomColorFunc);
+
+// RESET SKETCH PAD
+const btnReset = document.querySelector(".btn-reset");
+btnReset.addEventListener("click", makeGrid.bind(16));

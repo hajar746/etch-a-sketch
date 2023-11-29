@@ -13,6 +13,7 @@ const makeGrid = function (size) {
     inputValue = input.value;
     size = inputValue;
   }
+  if (!size) size = 16;
   sketchPad.innerHTML = "";
   const gridSize = Number(size * size);
   for (let i = 1; i <= gridSize; i++) {
@@ -33,19 +34,18 @@ btnChange.addEventListener("click", () => makeGrid(size));
 
 // changing color of divs when hovered over
 const colorPicker = document.querySelector(".color-picker");
-
-sketchPad.addEventListener("mousedown", function (e) {
-  const target = e.target.closest(".divs");
-  if (target) {
-    target.style.backgroundColor = colorPicker.value;
-    sketchPad.addEventListener("mouseover", function (e) {
-      const target = e.target.closest(".divs");
-      if (target) {
-        target.style.backgroundColor = colorPicker.value;
-      }
+function changeColor(e) {
+  let divs = document.querySelectorAll(".divs");
+  let color = colorPicker.value;
+  e.target.style.backgroundColor = color;
+  for (let i = divs.length - 1; i >= 0; i--) {
+    divs[i].addEventListener("mouseenter", () => {
+      divs[i].style.backgroundColor = color;
     });
   }
-});
+}
+colorPicker.addEventListener("input", changeColor);
+sketchPad.addEventListener("mousedown", changeColor);
 
 // RAINBOW button
 
@@ -65,4 +65,3 @@ function randomColorFunc() {
 }
 
 btnRainbow.addEventListener("click", randomColorFunc);
-const remove = () => btnRainbow.removeEventListener("click", randomColorFunc);

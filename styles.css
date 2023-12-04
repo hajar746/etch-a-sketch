@@ -7,7 +7,7 @@
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main {
@@ -130,4 +130,26 @@ input[type="range"]::-webkit-slider-thumb {
 .btn-reset {
   background-color: #a8102e;
   font-weight: 700;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    flex-direction: column;
+  }
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .controls h2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
